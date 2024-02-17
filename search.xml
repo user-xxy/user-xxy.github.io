@@ -3,9 +3,9 @@
   <entry>
     <title>使用 HEXO 生產 blog | Github page | 永久免費部署｜git ssh</title>
     <url>/2024/02/17/hello-world/</url>
-    <content><![CDATA[<h3 id="第一部分"><a href="#第一部分" class="headerlink" title="第一部分"></a>第一部分</h3><h5 id="1、安裝環境-node-js"><a href="#1、安裝環境-node-js" class="headerlink" title="1、安裝環境 node.js"></a>1、安裝環境 node.js</h5><p>安裝時注意添加路徑。</p>
+    <content><![CDATA[<h1 id="第一部分"><a href="#第一部分" class="headerlink" title="第一部分"></a>第一部分</h1><h2 id="1、安裝環境-node-js"><a href="#1、安裝環境-node-js" class="headerlink" title="1、安裝環境 node.js"></a>1、安裝環境 node.js</h2><p>安裝時注意添加路徑。</p>
 <p><a href="https://nodejs.org/en/">https://nodejs.org/en/</a></p>
-<h5 id="2、安裝-git-bash"><a href="#2、安裝-git-bash" class="headerlink" title="2、安裝 git bash"></a>2、安裝 git bash</h5><p><a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
+<h2 id="2、安裝-git-bash"><a href="#2、安裝-git-bash" class="headerlink" title="2、安裝 git bash"></a>2、安裝 git bash</h2><p><a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
 <p>在 git bash 中輸入以下命令啓用 Hexo鏡像</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
 <p>在 git bash 中輸入以下命令開始全局安裝 Hexo</p>
@@ -19,11 +19,11 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
 <p>輸入 <code>http://localhost:4000</code> ，能正常訪問，則啓動成功</p>
 <hr>
-<h3 id="第二部分"><a href="#第二部分" class="headerlink" title="第二部分"></a>第二部分</h3><h5 id="3、將-hexo-代碼提交到-github-倉庫，"><a href="#3、將-hexo-代碼提交到-github-倉庫，" class="headerlink" title="3、將 hexo 代碼提交到 github 倉庫，"></a>3、將 hexo 代碼提交到 github 倉庫，</h5><p>註冊 github.com 賬號</p>
+<h1 id="第二部分"><a href="#第二部分" class="headerlink" title="第二部分"></a>第二部分</h1><h2 id="3、將-hexo-代碼提交到-github-倉庫"><a href="#3、將-hexo-代碼提交到-github-倉庫" class="headerlink" title="3、將 hexo 代碼提交到 github 倉庫"></a>3、將 hexo 代碼提交到 github 倉庫</h2><p>註冊 github.com 賬號</p>
 <p>新建一個 github 倉庫，倉庫名必須是「你的GitHub用戶名.github.io」，</p>
 <p>比如 「mygithubusername.github.io」</p>
 <p>目的是為了搭載 GitHub Pages 服務。</p>
-<h6 id="3-1、生成-SSH-密鑰"><a href="#3-1、生成-SSH-密鑰" class="headerlink" title="3.1、生成 SSH 密鑰"></a>3.1、生成 SSH 密鑰</h6><p>在 git bash 中輸入如下命令</p>
+<h3 id="3-1、生成-SSH-密鑰"><a href="#3-1、生成-SSH-密鑰" class="headerlink" title="3.1、生成 SSH 密鑰"></a>3.1、生成 SSH 密鑰</h3><p>在 git bash 中輸入如下命令</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;你的GitHub用戶名&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;你註冊github的郵箱&quot;</span></span><br></pre></td></tr></table></figure>
 <p>生成密匙命令</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">&quot;你註冊github的郵箱&quot;</span></span><br></pre></td></tr></table></figure>
@@ -35,7 +35,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
 
-<h6 id="3-2-打開-「-config-yml」，找到文件最後一行的-deploy"><a href="#3-2-打開-「-config-yml」，找到文件最後一行的-deploy" class="headerlink" title="3.2 打開 「_config.yml」，找到文件最後一行的 deploy"></a>3.2 打開 「_config.yml」，找到文件最後一行的 <code>deploy</code></h6><p>替換以下代碼</p>
+<h3 id="3-2-打開-「-config-yml」，找到文件最後一行的-deploy"><a href="#3-2-打開-「-config-yml」，找到文件最後一行的-deploy" class="headerlink" title="3.2 打開 「_config.yml」，找到文件最後一行的 deploy"></a>3.2 打開 「_config.yml」，找到文件最後一行的 <code>deploy</code></h3><p>替換以下代碼</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/你的github用戶名/你的github用戶名.github.io.git,main </span><br></pre></td></tr></table></figure>
 
 <p>安裝推送命令</p>
@@ -46,7 +46,7 @@
 <p>推送成功後</p>
 <p>訪問網址：「你的GitHub用戶名.github.io」</p>
 <hr>
-<h3 id="第三部分"><a href="#第三部分" class="headerlink" title="第三部分"></a>第三部分</h3><p>安裝butterfly主題</p>
+<h1 id="第三部分"><a href="#第三部分" class="headerlink" title="第三部分"></a>第三部分</h1><p>安裝butterfly主題</p>
 <p><a href="https://butterfly.js.org/">https://butterfly.js.org/</a></p>
 <p>根目錄下 git bash 輸入命令</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
